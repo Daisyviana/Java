@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Produto {
 
-	private int id; 
+	private int id;
 	private String nome;
 	private int versao;
 	private String produtora;
@@ -71,19 +71,19 @@ public class Produto {
 	}
 	
 	public void visualizar() {
+		
+		// Formatador de moeda - PT-BR - Real
 		NumberFormat nfMoeda = NumberFormat.getCurrencyInstance();
 		
-		System.out.println("**************\n");
-		System.out.println("              DADOS DO PRODUTO            ");
-		System.out.println("\n****************");
+		System.out.println("\n**************************************");
+		System.out.println("Dados do Produto");
+		System.out.println("**************************************");
 		System.out.println("Id: " + this.id);
 		System.out.println("Nome: " + this.nome);
 		System.out.println("Versão: " + this.versao);
 		System.out.println("Produtora: " + this.produtora);
-		System.out.println("Data de Lançamento: " + this.dataLancamento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))
-		);
+		System.out.println("Data de lançamento: " + this.dataLancamento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
 		System.out.println("Preço: " + nfMoeda.format(this.preco));
 	}
-	
 	
 }

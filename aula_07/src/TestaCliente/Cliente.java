@@ -8,6 +8,7 @@ public class Cliente {
 	private String endereco;
 	private String email;
 	private String nomeDaMae;
+	private int cpf;
 	
 	public Cliente(String nome, int idade, String endereco, String email, String nomeDaMae) {
 		this.nome = nome;
@@ -15,6 +16,7 @@ public class Cliente {
 		this.endereco = endereco;
 		this.email = email;
 		this.nomeDaMae = nomeDaMae;
+		this.cpf = cpf;
 	}
 
 	public String getNome() {
@@ -67,6 +69,7 @@ public class Cliente {
 		System.out.println("Endereço: " + this.endereco);
 		System.out.println("E-mail: " + this.email);
 		System.out.println("Nome da mãe: " + this.nomeDaMae);
+		System.out.println("cpf: " + this.cpf);
 		
 	}
 	

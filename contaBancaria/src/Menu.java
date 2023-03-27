@@ -1,49 +1,39 @@
-package contaBancaria;
-
 import java.util.Scanner;
 
 import conta.model.Conta;
+import conta.model.ContaCorrente;
+import conta.model.ContaPoupanca;
 import conta.ultil.Cores;
 
 public class Menu {
-
-public static void sobre() {
-		
-		System.out.println("                                                     ");
-		System.out.println("*****************************************************");
-		System.out.println("                                                     ");
-		System.out.println("      Daisy Kelly Viana - daisyviana96@gmail.com     ");
-		System.out.println("                                                     ");
-		System.out.println("          https://github.com/Daisyviana              ");
-		System.out.println("                                                     ");
-		System.out.println("*****************************************************");
-	
-	}   
-
-
 	public static void main(String[] args) {
 
 		Scanner leia = new Scanner(System.in);
 
 		int opcao, numero, agencia, tipo, aniversario, numeroDestino;
-		String titular;
+		String titular; 
 		float saldo, limite, valor;
 		
 		Conta c1 = new Conta(1, 123, 1, "Jeniffer Souza", 100000.00f);
-		
 		c1.visualizar();
 		
-		System.out.println("\nSaldo da conta: " + c1.getSaldo() + "\n");
-
-		c1.setTitular("\nJeniffer Souza Ribeiro");
+		ContaCorrente cc1 = new ContaCorrente(2, 123, 1, "Gabriel Machado", 100000.00f, 1000.00f);
+		cc1.visualizar();
 		
-		c1.visualizar();
+		cc1.sacar(100900);
 		
-		c1.sacar(200000.0f);
-		c1.visualizar();
+		cc1.visualizar();
 		
-		c1.depositar(2000.0f);
-		c1.visualizar();
+		cc1.depositar(2000);
+		
+		cc1.visualizar();
+		
+		ContaPoupanca cp1 = new ContaPoupanca(2, 123, 2, "Alexmar Oliveira", 100000.0f, 15);
+        cp1.visualizar();
+        cp1.sacar(1000.0f);
+        cp1.visualizar();
+        cp1.depositar(5000.0f);
+        cp1.visualizar();
 		
 		while (true) {
 
@@ -66,7 +56,7 @@ public static void sobre() {
 			System.out.println("*****************************************************");
 			System.out.println("Entre com a opção desejada:                          ");
 			System.out.println("                                                     " + Cores.TEXT_RESET);
-			
+
 			opcao = leia.nextInt();
 
 			if (opcao == 9) {
@@ -128,10 +118,93 @@ public static void sobre() {
 				numero = leia.nextInt();
 
 				tipo = 1;
-				
 				// condicional buscar na collection
+
+				System.out.println("Digite o Numero da Agência: ");
+				agencia = leia.nextInt();
+				System.out.println("Digite o Nome do Titular: ");
+				leia.skip("\\R?");
+				titular = leia.nextLine();
+
+				System.out.println("Digite o Saldo da Conta (R$): ");
+				saldo = leia.nextFloat();
+
+				// retornar tipo
+
+				switch (tipo) {
+				case 1 -> {
+					System.out.println("Digite o Limite de Crédito (R$): ");
+					limite = leia.nextFloat();
+
+					// criar o objeto conta corrente
+				}
+				case 2 -> {
+					System.out.println("Digite o dia do Aniversario da Conta: ");
+					aniversario = leia.nextInt();
+
+					// criar o objeto conta poupanca
+
+				}
+				default -> {
+					System.out.println("Tipo de conta inválido!");
+				}
+				}
+
+				// fim do condicional buscar na collection
+
+				break;
+			case 5:
+				System.out.println("Apagar a Conta\n\n");
+
+				System.out.println("Digite o número da conta: ");
+				numero = leia.nextInt();
+
+				break;
+			case 6:
+				System.out.println("Saque\n\n");
+
+				System.out.println("Digite o número da conta: ");
+				numero = leia.nextInt();
+				
+				System.out.println("Digite o valor do Saque: ");
+				valor = leia.nextFloat();
+
+				break;
+			case 7:
+				System.out.println("Depósito\n\n");
+
+				System.out.println("Digite o número da conta: ");
+				numero = leia.nextInt();
+				
+				System.out.println("Digite o valor do Depósito: ");
+				valor = leia.nextFloat();
+
+				break;
+			case 8:
+				System.out.println("Transferência entre Contas\n\n");
+
+				System.out.println("Digite o Numero da Conta de Origem: ");
+				numero = leia.nextInt();
+				System.out.println("Digite o Numero da Conta de Destino: ");
+				numeroDestino = leia.nextInt();
+
+				do {
+					System.out.println("Digite o Valor da Transferência (R$): ");
+					valor = leia.nextFloat();
+				} while (valor <= 0);
+
+				break;
+			default:
+				System.out.println("\nOpção Inválida!\n");
+				break;
 			}
 		}
 	}
 
+	public static void sobre() {
+		System.out.println("\n*********************************************************");
+		System.out.println("Daisy Kelly Viana - daisyviana96@gmail.com");
+		System.out.println("https://github.com/Daisyviana");
+		System.out.println("*********************************************************");
+	}
 }

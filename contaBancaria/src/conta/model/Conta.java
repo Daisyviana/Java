@@ -16,6 +16,10 @@ public class Conta {
 		this.saldo = saldo;
 	}
 
+	public Conta() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getNumero() {
 		return numero;
 	}
