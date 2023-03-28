@@ -1,22 +1,20 @@
-package TestaCliente;
+package clente;
 
-public class Cliente {
-		
-	
+public class Clientes {
 	private String nome;
 	private int idade;
 	private String endereco;
 	private String email;
 	private String nomeDaMae;
-	private int cpf;
 	
-	public Cliente(String nome, int idade, String endereco, String email, String nomeDaMae) {
+	
+	public Clientes(String nome, int idade, String endereco, String email, String nomeDaMae) {
 		this.nome = nome;
 		this.idade = idade;
 		this.endereco = endereco;
 		this.email = email;
 		this.nomeDaMae = nomeDaMae;
-		this.cpf = cpf;
+		
 	}
 
 	public String getNome() {
@@ -69,8 +67,10 @@ public class Cliente {
 		System.out.println("Endereço: " + this.endereco);
 		System.out.println("E-mail: " + this.email);
 		System.out.println("Nome da mãe: " + this.nomeDaMae);
-		System.out.println("cpf: " + this.cpf);
 		
+	
 	}
 	
 }
+
+
