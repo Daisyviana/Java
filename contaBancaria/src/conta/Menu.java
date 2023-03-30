@@ -144,6 +144,7 @@ public class Menu {
 				default -> {
 					System.out.println("Tipo de conta inválido!");
 				}
+				
 				}
 
 				// fim do condicional buscar na collection
@@ -179,6 +180,7 @@ public class Menu {
 				valor = leia.nextFloat();
 
 				KeyPress();
+				
 				break;
 			case 8:
 				System.out.println("Transferência entre Contas\n\n");
@@ -194,6 +196,7 @@ public class Menu {
 				} while (valor <= 0);
 
 				KeyPress();
+				
 				break;
 			default:
 				System.out.println("\nOpção Inválida!\n");
