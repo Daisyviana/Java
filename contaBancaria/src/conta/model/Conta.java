@@ -1,6 +1,6 @@
 package conta.model;
 
-public class Conta {
+public abstract class Conta {
 
 	private int numero;
 	private int agencia;
@@ -91,6 +91,21 @@ public class Conta {
 		System.out.println("Tipo da conta: " + tipo);
 		System.out.println("Nome do titular da conta: " + this.titular);
 		System.out.println("Saldo da conta: " + this.saldo);
+	}
+
+	public static void cadastrar(ContaPoupanca contaPoupanca) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public static int gerarNumero() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public static void cadastrar(ContaCorrente contaCorrente) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
